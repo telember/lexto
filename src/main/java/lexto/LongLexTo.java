@@ -102,7 +102,7 @@ public class LongLexTo {
 		// System.out.println(" !!! Error: Missing default dictionary file,
 		// lexitron.Dict");
 
-		addDict("lexitron.Dict");
+//		addDict("lexitron.Dict");
 		indexList = new Vector();
 		lineList = new Vector();
 		typeList = new Vector();
@@ -150,6 +150,7 @@ public class LongLexTo {
 			if (line.length() > 0)
 				dict.add(line);
 		}
+		ptree = new LongParseTree(dict, indexList, typeList);
 	}
 	
 	public void addDict(InputStream _is) throws IOException {
@@ -168,6 +169,7 @@ public class LongLexTo {
 			if (line.length() > 0)
 				dict.add(line);
 		}
+		ptree = new LongParseTree(dict, indexList, typeList);
 	}
 
 	/****************************************************************/
