@@ -171,6 +171,17 @@ public class LongLexTo {
 		}
 		ptree = new LongParseTree(dict, indexList, typeList);
 	}
+	
+	
+	
+	public void addDictList(List<String> dictArr) throws IOException{
+		if(dictArr != null){
+			for(String e : dictArr){
+				dict.add(e);
+			}
+			ptree = new LongParseTree(dict, indexList, typeList);
+		}
+	}
 
 	/****************************************************************/
 

@@ -8,12 +8,14 @@ public class Main {
 	LongLexTo tokenizer;
 	public static void main(String[] args) {
 		String input = "test";
-		new Main().TokenzerTest( input);
+		String text5 = "บริการไม่ดีเบื่อหน่ายห่วย";
+		new Main().TokenzerTest( text5);
 		}
 	
 	private void TokenzerTest(String input){
 		try {
-			tokenizer = new LongLexTo();	
+			tokenizer = new LongLexTo();
+	
 		
 			System.out.println(tokenizer.parseToString(input));
 		} catch (IOException e) {
