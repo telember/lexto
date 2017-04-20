@@ -2,7 +2,7 @@
 thai word segmentation  ( Longest Matching )
 
 
-# Build
+# Usage
 maven install & run test
 
 
