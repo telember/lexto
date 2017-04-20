@@ -91,18 +91,6 @@ public class LongLexTo {
 	/*******************************************************************/
 	public LongLexTo() throws IOException {
 		dict = new Trie();
-		// ClassLoader classLoader = getClass().getClassLoader();
-		// System.out.println(" file path, lexitron.Dict "+
-		// classLoader.getResource("lexitron.Dict").getFile());
-		// File dictFile = new
-		// File(classLoader.getResource("lexitron.Dict").getFile());
-		// if (dictFile.exists())
-		//
-		// else
-		// System.out.println(" !!! Error: Missing default dictionary file,
-		// lexitron.Dict");
-
-//		addDict("lexitron.Dict");
 		indexList = new Vector();
 		lineList = new Vector();
 		typeList = new Vector();
@@ -115,14 +103,6 @@ public class LongLexTo {
 	/*******************************************************************/
 	public LongLexTo(InputStream _is) throws IOException {
 		dict = new Trie();
-		// File dictFile = new File(path);
-		// System.out.println(" file path, " + path);
-		// if (dictFile.exists())
-		// addDict(dictFile);
-		// else
-		// System.out.println(" !!! Error: The dictionary file is not found, " +
-		// dictFile.getName());
-
 		addDict(_is);
 		indexList = new Vector<Integer>();
 		lineList = new Vector<Integer>();
@@ -141,10 +121,7 @@ public class LongLexTo {
 		InputStream _is = this.getClass().getClassLoader().getResourceAsStream(path);
 		InputStreamReader _r = new InputStreamReader(_is);
 		BufferedReader br = new BufferedReader(_r);
-		// FileReader fr = new FileReader(dictFile);
-		// String ext =
-		// FilenameUtils.getExtension(dictFile.getAbsolutePath()).toLowerCase();
-		// System.out.println("File EXT : "+ext);
+
 		while ((line = br.readLine()) != null) {
 			line = line.trim();
 			if (line.length() > 0)
@@ -157,13 +134,9 @@ public class LongLexTo {
 
 		// Read words from dictionary
 		String line;
-		//InputStream _is = this.getClass().getClassLoader().getResourceAsStream(path);
 		InputStreamReader _r = new InputStreamReader(_is);
 		BufferedReader br = new BufferedReader(_r);
-		// FileReader fr = new FileReader(dictFile);
-		// String ext =
-		// FilenameUtils.getExtension(dictFile.getAbsolutePath()).toLowerCase();
-		// System.out.println("File EXT : "+ext);
+
 		while ((line = br.readLine()) != null) {
 			line = line.trim();
 			if (line.length() > 0)
@@ -336,7 +309,7 @@ public class LongLexTo {
 		while (hasNext()) {
 			end = this.next();
 			text.add(line.substring(begin, end));
-			System.out.print(" " + line.substring(begin, end));
+//			System.out.print(" " + line.substring(begin, end));
 			begin = end;
 		}
 		return text;
